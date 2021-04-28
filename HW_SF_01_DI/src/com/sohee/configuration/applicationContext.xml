@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Application에서 사용할 Spring 자원들을 설정하는 파일입니다.
+	spring Container는 설정파일에 설정된 내용을 읽어 Application에서 필요한 기능들을 제공합니다. -->
+<!-- root 태그: beans -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- bean: 스프링 컨테이너가 관리할 Bean 객체를 설정합니다. -->
+	<!-- 주의: 클래스만 등록해야합니다. -->
+	<!-- name: 주입 받을 곳에서 호출 할 이름 설정
+		 id: 주입 받을 곳에서 호출할 이름 설정(유일 값)
+		 class: 주입할 객체의 클래스 
+		 factory-method: Singleton 패턴으로 작성된 객체의 factory 메소드 호출 -->
+	
+	<!-- dataSource (DB Connection 담당) -->
+	<bean id="ds" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/ssafyweb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"/>
+		<property name="username" value="ssafy"/>
+		<property name="password" value="ssafy"/>
+	</bean>
+	
+	<!-- Product Dao -->
+	<bean id="pDao" class="com.sohee.model.repository.ProductRepoImpl">
+		<!-- ref에는 dataSource의 id를 넣는다. -->
+		<property name="dataSource" ref="ds"/>
+	</bean>
+	
+	<!-- Product Service -->
+	<bean id="pService" class="com.sohee.model.service.ProductServiceImpl">
+		<!-- 의존성 주입을 위해 ProductService의 setRepo가 자동 실행 됩니다. -->
+		<property name="productRepo" ref="pDao"/>
+	</bean>
+</beans>
