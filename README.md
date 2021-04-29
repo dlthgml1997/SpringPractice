@@ -16,6 +16,7 @@ xml 파일을 활용한 의존성 주입(Dependency Injection) 연습 <br>
 * 이때, 이름, 직업을 userDto로 관리했습니다. 모델의 변수명과 form 내의 input 태그의 name 속성이 모두 맞다면 따로 맵핑하는 함수가 없어도 컨트롤러 함수에 자동으로 받아옵니다. <br>
 4. 계산기 기능을 구현했습니다. 
 <br>
+
 ### 03. HW_SF_03_DI_MVC_DB
 스프링 MVC + DI + DB 연습 <br>
 기존 xml 방식 DI 에서 annotation(`@`)과 java config file을 이용한 DI 방식으로 변경했습니다.<br>
