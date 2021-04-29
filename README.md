@@ -21,4 +21,12 @@ xml 파일을 활용한 의존성 주입(Dependency Injection) 연습 <br>
 기존 xml 방식 DI 에서 annotation(`@`)과 java config file을 이용한 DI 방식으로 변경했습니다.<br>
 상품 등록 및 상품 목록 기능을 구현했습니다.
 
-
+### 04. HW_SF_04_MyBatis
+Spring & MyBatis <br>
+ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD 기능을 구현했습니다. <br>
+* 수동적인 parameter 설정과 Query 결과에 대한 mapping 구문을 제거했습니다.
+* root-context.xml 파일에 sql mapper 파일의 위치를 지정합니다.
+* sql mapper file(product.xml) 에는 CRUD에 대한 SQL문이 작성되어 있습니다. 이 파일에서 Dao와의 mapping이 일어납니다.
+   * 기존 ProductDaoImpl.class 기능을 product.xml에서 하기 때문에 삭제됐습니다.  
+* 서비스 클래스에서는 `@Autowired` 어노테이션으로 SqlSession을 통해 Dao 인터페이스의 기능을 사용합니다.
+* mybatis-config.xml 파일에는 Product Dto를 간결하게 작성하기 위한 alias가 작성되어 있습니다.
