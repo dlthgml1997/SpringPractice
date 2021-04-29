@@ -20,7 +20,7 @@ xml 파일을 활용한 의존성 주입(Dependency Injection) 연습 <br>
 ### 03. HW_SF_03_DI_MVC_DB
 스프링 MVC + DI + DB 연습 <br>
 기존 xml 방식 DI 에서 annotation(`@`)과 java config file을 이용한 DI 방식으로 변경했습니다.<br>
-상품 등록 및 상품 목록 기능을 구현했습니다.
+상품 등록 및 상품 목록 기능을 구현했습니다.<br>
 <br>
 
 ### 04. HW_SF_04_MyBatis
