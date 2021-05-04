@@ -1,13 +1,13 @@
 <b>과제를 수행하며 작성한 스프링 프레임워크 웹 프로젝트입니다.</b>
 
-### 01. HW_SF_01_DI
+## 01. HW_SF_01_DI
 xml 파일을 활용한 의존성 주입(Dependency Injection) 연습 <br>
 * <b>applicationContext.xml :</b> Application에서 사용할 Spring 자원들을 설정하는 파일입니다.
 > Spring Container는 ProductRepoImpl.java 파일에서 setDataSource를 통해 Spring 자원을 자동으로 얻어옵니다.
 > DB와의 연결을 맺고 끊는 단계를 줄여줍니다. <br>
 <br>
 
-### 02. HW_SF_02_MVC
+## 02. HW_SF_02_MVC
 스프링 MVC 프로젝트 연습 <br>
 > 프로젝트 생성 방법:  Spring Legacy Project -> Spring MVC Project <br>
 1. `@Controller` 어노테이션으로 controller 클래스를 작성하고, jsp 파일을 호출하는 기능
@@ -17,13 +17,13 @@ xml 파일을 활용한 의존성 주입(Dependency Injection) 연습 <br>
 4. 계산기 기능을 구현했습니다. 
 <br>
 
-### 03. HW_SF_03_DI_MVC_DB
+## 03. HW_SF_03_DI_MVC_DB
 > 스프링 MVC + DI + DB 연습 <br>
 * 기존 xml 방식 DI 에서 annotation(`@`)과 java config file을 이용한 DI 방식으로 변경했습니다.<br>
 * 상품 등록 및 상품 목록 기능을 구현했습니다.<br>
 <br>
 
-### 04. HW_SF_04_MyBatis
+## 04. HW_SF_04_MyBatis
 > Spring & MyBatis <br>
 ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD 기능을 구현했습니다. <br>
 * 수동적인 parameter 설정과 Query 결과에 대한 mapping 구문을 제거했습니다.
@@ -32,8 +32,10 @@ ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD �
    * 기존 ProductDaoImpl.class 기능을 product.xml에서 하기 때문에 삭제됐습니다.  
 * 서비스 클래스에서는 `@Autowired` 어노테이션으로 SqlSession을 통해 Dao 인터페이스의 기능을 사용합니다.
 * mybatis-config.xml 파일에는 Product Dto를 간결하게 작성하기 위한 alias가 작성되어 있습니다.
-<br>
-### 05. HW_SF_05_RestAPI
+ 
+<br><br>
+
+## 05. HW_SF_05_RestAPI
 
 > 상품 관리 서비스에서 Restful API를 구현하여 AJAX 요청을 처리한 프로젝트입니다.
 
@@ -45,9 +47,9 @@ ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD �
 
 ![README/결과화면.png](README/결과화면.png)
 
-<br>
+<br><br>
 
-### 06. HW_SF_06_SpringBoot
+## 06. HW_SF_06_SpringBoot
 
 > 05 프로젝트를 스프링 부트 환경으로 구현했습니다. 또한, swagger를 적용했습니다.
 
