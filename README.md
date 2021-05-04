@@ -32,3 +32,40 @@ ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD �
    * 기존 ProductDaoImpl.class 기능을 product.xml에서 하기 때문에 삭제됐습니다.  
 * 서비스 클래스에서는 `@Autowired` 어노테이션으로 SqlSession을 통해 Dao 인터페이스의 기능을 사용합니다.
 * mybatis-config.xml 파일에는 Product Dto를 간결하게 작성하기 위한 alias가 작성되어 있습니다.
+
+### 05. HW_SF_05_RestAPI
+
+> 상품 관리 서비스에서 Restful API를 구현하여 AJAX 요청을 처리한 프로젝트입니다.
+
+1. `jackson-databind`: Json 형태의 자료 변환을 위한 dependency
+2. 상품목록 조회(READ-selectAll), 상품조회(READ-select), 상품 추가(CREATE-insert), 상품 수정(UPDATE-update), 상품 삭제(DELETE-delete) 기능을 위한 ProductRestCotroller를 사용했습니다.
+    - 기존 controller와 다르게 `@RestCotroller` 어노테이션을 사용합니다.
+
+**결과 화면**
+
+![README/결과화면.png](README/결과화면.png)
+
+### 06. HW_SF_06_SpringBoot
+
+> 05 프로젝트를 스프링 부트 환경으로 구현했습니다. 또한, swagger를 적용했습니다.
+
+1. `swagger`: 프로젝트의 API 목록을 웹에서 확인 및 테스트 할 수 있게 해주는 Library입니다. 이 프로젝트에서는 Product의 rest controller에 정의된 모든 URL과 Product model 정보를 확인할 수 있도록 했습니다.
+2. root-context.xml 설정 내용은 application.properties에 작성합니다.
+
+    ```xml
+    server.port=80
+
+    spring.mvc.view.prefix=/WEB-INF/views/
+    spring.mvc.view.suffix=.jsp
+
+    #Mysql Database setting
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    spring.datasource.url=jdbc:mysql://127.0.0.1:3306/ssafyweb?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+    spring.datasource.username=
+    spring.datasource.password=
+
+    #MyBatis Setting
+    mybatis.type-aliases-package=com.ssafy.product.model
+    mybatis.mapper-locations=mapper/**/*.xml
+    ```
+
