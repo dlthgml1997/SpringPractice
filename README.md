@@ -32,7 +32,7 @@ ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD �
    * 기존 ProductDaoImpl.class 기능을 product.xml에서 하기 때문에 삭제됐습니다.  
 * 서비스 클래스에서는 `@Autowired` 어노테이션으로 SqlSession을 통해 Dao 인터페이스의 기능을 사용합니다.
 * mybatis-config.xml 파일에는 Product Dto를 간결하게 작성하기 위한 alias가 작성되어 있습니다.
-
+<br>
 ### 05. HW_SF_05_RestAPI
 
 > 상품 관리 서비스에서 Restful API를 구현하여 AJAX 요청을 처리한 프로젝트입니다.
@@ -44,6 +44,8 @@ ORM(Object Relational Mapping) Framework 인 MyBatis를 적용해 product CRUD �
 **결과 화면**
 
 ![README/결과화면.png](README/결과화면.png)
+
+<br>
 
 ### 06. HW_SF_06_SpringBoot
 
